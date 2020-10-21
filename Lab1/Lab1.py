@@ -1,9 +1,16 @@
 print("n =", end=" ")
-n = int(input())
-if n>0:
+s = input()
+if s.isdigit():
+    n = int(s);
     n1 = n // 100
     n = (n % 100) * 10 + n1
+    print("res =", n)
 else:
-    n1 = ((-1) * n) // 100
-    n = ((((-1) * n) % 100) * 10 + n1)*(-1)
-print("res =", n)
+    s = s.replace('-','')
+    if s.isdigit():
+        n = int(s);
+        n1 = n // 100
+        n = ((n % 100) * 10 + n1)*(-1)
+        print("res =", n)
+    else:
+        print("Error")
